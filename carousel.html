@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+        }
+
+        div#div1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        .container{
+            border: 1px solid gray;
+            width: 100%;
+            height: 50%;
+        }
+        .navigateLeft{
+            display: flex;
+            float: left;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            text-align: center;
+            background-color: #eee;
+            height: 100%;
+        }
+        .navigateRight{
+            float: right;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            text-align: center;
+            background-color: #eee;
+            height: 100%;
+        }
+        .navigatorIcon{
+
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div = document.getElementById('div1');
+            var opacity = 1;
+
+            var intervalID = setInterval(fader, 10);
+
+            function fader(){
+                opacity = opacity - 0.01;
+                if (opacity <= 0) {
+                    clearInterval(intervalID);
+                } else {
+                    var colorstr = "rgba(255,0,0," + opacity + ")";
+                    div.style.backgroundColor = colorstr;
+                }
+            }
+
+            navigateLeft.onclick = function(){
+
+            };
+
+        };
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="navigateLeft">
+        <span class="navigatorIcon">&laquo;</span>
+    </div>
+    <div class="navigateRight">
+        <span class="navigatorIcon">&raquo;</span>
+    </div>
+</div>
+
+<div id="div1"></div>
+
+</body>
+</html>
